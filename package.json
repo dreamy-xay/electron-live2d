@@ -1,0 +1,54 @@
+{
+  "name": "live2d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron .",
+    "build:mac": "electron-builder --mac",
+    "build:all": "electron-builder -mwl"
+  },
+  "build": {
+    "productName": "看板娘",
+    "appId": "com.live2d.app",
+    "copyright": "dreamy-xay",
+    "directories": {
+      "output": "./build"
+    },
+    "asar": true,
+    "dmg": {
+      "title": "看板娘",
+      "contents": [
+        {
+          "x": 350,
+          "y": 120,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 110,
+          "y": 120,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "height": 280,
+        "width": 460
+      },
+      "background": "./icon/background.jpg",
+      "iconSize": 100
+    },
+    "mac": {
+      "icon": "./icon/icon.icns",
+      "target": ["dmg", "zip"],
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.0",
+    "electron-builder": "^22.10.5"
+  }
+}
+

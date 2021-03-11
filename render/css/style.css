@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 360px;
+    width: 305px;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    /* border: 1px solid white; */
+    /* box-sizing: border-box; */
+}
+
+#waifu #live2d {
+    margin-left: -5px !important;
+}
+
+#waifu-tool {
+    right: 0 !important;
+}
