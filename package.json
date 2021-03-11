@@ -1,0 +1,43 @@
+{
+  "name": "live2d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron .",
+    "build:win": "electron-builder --win  --ia32",
+    "build:all": "electron-builder -mwl"
+  },
+  "build":{
+    "productName": "看板娘",
+    "appId": "com.live2d.app",
+    "copyright": "dreamy-xay",
+    "directories": {
+      "output": "./build"
+    },
+    "asar": true,
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./icon/install.ico",
+      "uninstallerIcon": "./icon/install.ico",
+      "installerHeaderIcon": "./icon/install.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "看板娘"
+    },
+    "win": {
+      "icon": "./icon/icon.ico",
+      "target": "nsis",
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.0",
+    "electron-builder": "^22.10.5"
+  }
+}

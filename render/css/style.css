@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 360px;
+    width: 305px;
+    overflow: hidden;
+    user-select: none;
+    /* border: 1px solid white; */
+    /* box-sizing: border-box; */
+}
+
+#waifu #live2d {
+    margin-left: -5px !important;
+}
+
+#waifu-tool {
+    right: 0 !important;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+#drag {
+    position: fixed;
+    left: 2px;
+    top: 2px;
+    -webkit-app-region: drag;
+    animation: turn 1s linear infinite, show 4s ease-in-out;
+    width: 35px;
+    height: 35px;
+    opacity: 0.8;
+    transition: opacity 1s ease-in-out;
+}
+
+.drag-hidden {
+    opacity: 0 !important;
+}
+
+#waifu:hover #drag {
+    opacity: 0.8;
+}
+
+#waifu.drag-hidden:hover #drag {
+    opacity: 0 !important;
+}
+
+
+
+#drag img {
+    width: 100%;
+    height: 100%;
+}
